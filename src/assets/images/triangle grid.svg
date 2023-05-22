@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 600 600" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<g id="Pyramide">
+<path d="M38.2305 512.4L133.339 512.4L85.8915 428.258L38.2305 512.4Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M183.231 426.026L88.1233 426.026L135.57 510.151L183.231 426.026Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+<path d="M137.446 512.507L232.554 512.507L185.107 428.383L137.446 512.507Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M282.446 426.133L187.32 426.133L234.785 510.258L282.446 426.133Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+<path d="M236.981 512.507L332.089 512.507L284.642 428.383L236.981 512.507Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M88.0698 424.044L183.178 424.044L135.731 339.902L88.0698 424.044Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M233.071 337.67L137.963 337.67L185.41 421.794L233.071 337.67Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+<path d="M187.16 423.741L282.268 423.741L234.821 339.599L187.16 423.741Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M138.034 335.527L233.142 335.527L185.695 251.403L138.034 335.527Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+</g>
+</svg>

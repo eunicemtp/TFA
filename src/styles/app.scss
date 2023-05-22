@@ -1,2 +1,21 @@
+@import '../../node_modules/modern-normalize/modern-normalize';
 @import 'utils/variables';
 @import 'components/type';
+@import 'components/title';
+@import 'components/menu';
+@import 'components/container';
+@import 'components/triangleGrid';
+
+
+
+body{
+    position: relative;
+    background: linear-gradient(180deg, 
+    #9F2222 0%, #872430 7.57%, 
+    #6A2641 20.35%, #54274E 36.41%, #412959 63.41%,
+    #322A62 82.69%, #222B6B 92.18%, #102C76 100%);
+
+    color: #eee5e5;
+    
+}
+

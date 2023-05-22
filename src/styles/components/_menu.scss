@@ -1,0 +1,26 @@
+.menu{
+    
+   
+    float: right;
+    &__liste{
+        display: flex;
+    }
+
+    &__el{
+        list-style-type: none;
+        margin-right: 50px;
+        
+        a{
+            text-decoration: none;
+            color: #eee5e5;
+        }
+        a:hover{
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-color: currentColor;
+            -webkit-text-stroke-width: .016em;
+            
+        }
+    
+    }
+    
+}
