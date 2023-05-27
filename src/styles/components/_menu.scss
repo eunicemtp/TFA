@@ -100,3 +100,21 @@
 
 }
 
+
+@media only screen and (min-width: 1024px){
+
+
+    .menu{
+
+        &__el{
+
+            font-size: 19px;
+        }
+
+        position: fixed;
+        float: right;
+        right: 0;
+
+
+    }
+}
