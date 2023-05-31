@@ -25,15 +25,21 @@
 
         top: 120vh;
         position: absolute;
-   
-        
     }
-    .container__3{
+    .pin2{
+       
+        position: absolute;
+    }
+    .pin-container{
+        top: 30%;
+        position: relative;
+    }
+    // .container__3{
 
-        background: url(../assets/images/page3.png);
-        background-size: 100%;
-        opacity: 50%;
-    }
+    //     background: url(../assets/images/page3.png);
+    //     background-size: 100%;
+    //     opacity: 50%;
+    // }
 
     
 }

@@ -40,63 +40,82 @@
         
     }
 
-    .menu #triangle{
-        display : inline-block;
-        height : 0;
-        width : 0;
-        margin-left: 0%;
-        border-right: 210px solid transparent;
-        border-top: 315px solid red;
+    // .menu #triangle{
+    //     display : inline-block;
+    //     height : 0;
+    //     width : 0;
+    //     margin-left: 0%;
+    //     border-right: 210px solid transparent;
+    //     border-top: 315px solid red;
         
-        border-left: 210px solid transparent;
-        position: relative;
-        top: -50vh;
-        transition: transform 0.6s cubic-bezier(0.06, 1.01, 0.68, 0.73);
+    //     border-left: 210px solid transparent;
+    //     position: relative;
+    //     top: -50vh;
+    //     transition: transform 0.6s cubic-bezier(0.06, 1.01, 0.68, 0.73);
         
-    }       
+    // }       
     
 
+    // .menu__liste {
+    //     top: -35vh;
+    //     position: relative;
+    //     z-index: 1;
+    //     height: 100%;
+    //     left: -167px;
+    //     width: 300px;
+    //     padding-bottom: 15px;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     flex-direction: row-reverse;
+        
+        
+        
+    // }
+
     .menu__liste {
-        top: -35vh;
+        top: 0vh;
         position: relative;
-        z-index: 1;
-        height: 100%;
-        left: -167px;
-        width: 300px;
+        z-index: 100;
+        left: 100%;
+        background-color: #9694b3;
         padding-bottom: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row-reverse;
+        width: 50%;
+        transition: transform 0.6s cubic-bezier(0.06, 1.01, 0.68, 0.73);
+      }
+
+      .menu--open .menu__liste {
+        transform: translateX(-20vh);
+        pointer-events: all;
+      }
+    
+      .menu--open .menu__el {
+        opacity: 1;
+      }
+    
+
+
+
+    // .menu--open {
+
+    //     .menu__liste {
+    //         pointer-events: all;
+    //         opacity: 1;
+    //     }
+        
+
+    //     .menu__el {
+    //         opacity: 1;
+    //     }
         
         
-        
-    }
+    //     #triangle {
 
-
-
-
-
-    .menu--open {
-
-        .menu__liste {
-            pointer-events: all;
-            opacity: 1;
-        }
-        
-
-        .menu__el {
-            opacity: 1;
-        }
-        
-        
-        #triangle {
-
-            transform: translateY(50vh);
-            stroke: green;
+    //         transform: translateY(50vh);
+    //         stroke: green;
             
 
-        }
-    }
+    //     }
+    // }
 
 }
 
