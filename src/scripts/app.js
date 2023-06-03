@@ -6,7 +6,7 @@ import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 import { PixiPlugin } from "gsap/dist/PixiPlugin";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin, PixiPlugin);
-gsap.registerPlugin(ScrollTrigger);
+
 
 gsap.set('.section', { autoAlpha: 0 })
 
