@@ -4,6 +4,13 @@
     height: 100vh;
 
 }
+.dilemme{
+
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+}
 
 
 @media only screen and (max-width: 768px){
@@ -14,13 +21,13 @@
        width: 80%;
        margin: 0 auto;
     }
-    .dilemme{
+    // .dilemme{
 
-        width: 90%;
-        height: 100vh;
-        margin: 0 auto;
-        padding: 0;
-    }
+    //     width: 90%;
+    //     height: 100vh;
+    //     margin: 0 auto;
+    //     padding: 0;
+    // }
     .pin-container,.pin{
         width: 0;
     }
@@ -100,10 +107,7 @@
         flex-direction: column;
         align-items: left;
         justify-content: center;
-       
-        
-    
-            
+     
     }
 
     .pin{
@@ -124,6 +128,75 @@
     //     background: url(../assets/images/page3.png);
     //     background-size: 100%;
     //     opacity: 50%;
+    // }
+
+    .container__6, .container__7{
+
+        height: 100vh;
+        width: 100%;
+    }
+    .section, .section2{
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        //background-color: #f27d0c;
+        //background: black;
+
+        .text{
+
+
+            margin:  50vh auto;
+            z-index: 5;
+        }
+        span{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 35%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .title{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 26%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .scener-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%) rotate(60deg);
+            z-index: 0;
+            opacity: 40%;
+        }
+        
+
+        .sync-logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 40%;
+        }
+    }
+
+    // h2,
+    // h3 {
+    //   position: relative;
+    //   font-family: sans-serif;
+    //   margin: 0;
+    //   color: white;
     // }
 
     
