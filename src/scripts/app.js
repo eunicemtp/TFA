@@ -36,276 +36,447 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 const time = gsap.timeline();
+let match = gsap.matchMedia();
+ScrollTrigger.saveStyles(".mobile, .desktop");
 
 /* /////////// */
 /* CONTAINER 2 */
 /* ////////// */
 
-const scenes = gsap.utils.toArray(".container__2");
-const height = (scenes.length - 1) * 400 + "%";
-const pinTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".container__2",
-    pin: ".fixe",
-    start: "center center",
-    end: "+=700vh",
-    scrub: 0.75,
-    limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
-  }
-});
+match.add("(min-width: 768px)", () => {
+  const scenes = gsap.utils.toArray(".container__2");
+  const height = (scenes.length - 1) * 400 + "%";
+  const pinTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container__2",
+      pin: ".fixe",
+      start: "center center",
+      end: "+=700vh",
+      scrub: 0.75,
+      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+    }
+  });
 
 
-gsap.from(".gauche", {
-  x: "-200%",
-  duration: 3,
-  delay: 6,
-  opacity: 0
-});
+  gsap.from(".gauche", {
+    x: "-200%",
+    duration: 3,
+    delay: 6,
+    opacity: 0
+  });
 
-gsap.from(".triangle", {
-  x: '0',
-  y: '0',
-  onComplete: function() {
-    gsap.to(".triangle", {
-      scrollTrigger: {
-        trigger: ".container__2",
-        toggleActions: "restart pause resume reverse",
-        start: "20vh center",
-        pin: ".pin",
-        end: "50vh",
-        limitCallbacks: true, // Ajoutez cette option pour limiter les appels de rappel
-      
-      },
-      x: '-30%',
-      y: '-18%',
-      ease: "smooth",
-      duration: 2,
-      rotate: 90,
-      onComplete: function() {
-        gsap.to(".triangle .neuf", {
-          scrollTrigger: {
-            trigger: ".container__2",
-            toggleActions: "play none reset reverse",
-            start: ".pin",
-            markers: true
-          },
-          y: '-440%',
-          ease: "smooth",
-          duration: 2,
-          zIndex: 10,
-          onComplete: function() {
-            gsap.to(".triangle .huit", {
-              scrollTrigger: {
-                trigger: ".gauche",
-                toggleActions: "play none reset reverse",
-                markers: true
-              },
-              x: '102%',
-              ease: "smooth",
-              duration: 2,
-              delay: 0.5
-            });
-
-            gsap.to(".gauche", {
-              ease: "smooth",
-              toggleActions: "restart pause reset reverse",
-              pin: '.pin',
-              x: 0
-            });
-          }
-        });
-      }
-    });
-  }
-});
-
-// Réduire la répétition de code pour .neuf et .huit dans .container__2
-// gsap.to([".triangle .neuf", ".triangle .huit"], {
-//   x: "0%",
-//   y: "0%",
-//   ease: "smooth",
-//   duration: 1,
-//   scrollTrigger: {
-//     trigger: ".container__2",
-//     start: "bottom center",
-//     end: "+=700vh",
-//     toggleActions: "play none reset reverse",
-//     onLeaveBack: () => {
-//       gsap.to([".triangle .neuf", ".triangle .huit"], {
-//         x: "105%",
-//         y: "-15%",
-//         ease: "smooth",
-//         duration: 1
-//       });
-//     }
-//   }
-// });
-
-/* /////////// */
-/* CONTAINER 3 */
-/* ////////// */
-
-const tween = gsap.to([".triangle .neuf", ".triangle .huit"], {
-  x: "0%",
-  y: "0%",
-  ease: "smooth",
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".container__2",
-    start: "bottom center",
-    
-    end: "+=700vh",
-    toggleActions: "play none reset reverse",
-    onLeaveBack: () => {
-      gsap.to([".triangle .neuf", ".triangle .huit"], {
-        x: "105%",
-        y: "-15%",
+  gsap.from(".triangle", {
+    x: '0',
+    y: '0',
+    onComplete: function() {
+      gsap.to(".triangle", {
+        scrollTrigger: {
+          trigger: ".container__2",
+          toggleActions: "restart pause resume reverse",
+          start: "20vh center",
+          pin: ".pin",
+          end: "50vh",
+          limitCallbacks: true, // Ajoutez cette option pour limiter les appels de rappel
+        
+        },
+        x: '-30%',
+        y: '-18%',
         ease: "smooth",
-        duration: 1,
-        onComplete: animContainer3
+        duration: 2,
+        rotate: 90,
+        onComplete: function() {
+          gsap.to(".triangle .neuf", {
+            scrollTrigger: {
+              trigger: ".container__2",
+              toggleActions: "play none reset reverse",
+              start: ".pin",
+              markers: true
+            },
+            y: '-440%',
+            ease: "smooth",
+            duration: 2,
+            zIndex: 10,
+            onComplete: function() {
+              gsap.to(".triangle .huit", {
+                scrollTrigger: {
+                  trigger: ".gauche",
+                  toggleActions: "play none reset reverse",
+                  markers: true
+                },
+                x: '102%',
+                ease: "smooth",
+                duration: 2,
+                delay: 0.5
+              });
+
+              gsap.to(".gauche", {
+                ease: "smooth",
+                toggleActions: "restart pause reset reverse",
+                pin: '.pin',
+                x: 0
+              });
+            }
+          });
+        }
       });
     }
+  });
+
+  // Réduire la répétition de code pour .neuf et .huit dans .container__2
+  // gsap.to([".triangle .neuf", ".triangle .huit"], {
+  //   x: "0%",
+  //   y: "0%",
+  //   ease: "smooth",
+  //   duration: 1,
+  //   scrollTrigger: {
+  //     trigger: ".container__2",
+  //     start: "bottom center",
+  //     end: "+=700vh",
+  //     toggleActions: "play none reset reverse",
+  //     onLeaveBack: () => {
+  //       gsap.to([".triangle .neuf", ".triangle .huit"], {
+  //         x: "105%",
+  //         y: "-15%",
+  //         ease: "smooth",
+  //         duration: 1
+  //       });
+  //     }
+  //   }
+  // });
+
+  /* /////////// */
+  /* CONTAINER 3 */
+  /* ////////// */
+
+  const tween = gsap.to([".triangle .neuf", ".triangle .huit"], {
+    x: "0%",
+    y: "0%",
+    ease: "smooth",
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".container__2",
+      start: "bottom center",
+      
+      end: "+=700vh",
+      toggleActions: "play none reset reverse",
+      onLeaveBack: () => {
+        gsap.to([".triangle .neuf", ".triangle .huit"], {
+          x: "105%",
+          y: "-15%",
+          ease: "smooth",
+          duration: 1,
+          onComplete: animContainer3
+        });
+      }
+    }
+  });
+
+  const pinTl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container__3",
+      pin: ".fixe2",
+      start: "center center",
+      end: "+=700vh",
+      scrub: 0.75,
+      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+    }
+  });
+
+
+
+
+  tween.then(animContainer3);
+
+  function animContainer3() {
+
+    gsap.to(".triangle .move_1", {
+      scrollTrigger: {
+        trigger: ".container__3",
+        toggleActions: "play none reset reverse",
+        start:"top top",
+        markers: true
+      },
+      x: '40%',
+      ease: "smooth",
+      duration: 1
+    });
+
+    gsap.to(".triangle .deux", {
+      scrollTrigger: {
+        trigger: ".container__3",
+        toggleActions: "play none reset reverse",
+        start:"top top",
+        markers: true
+      },
+      y: '-520%',
+      ease: "smooth",
+      duration: 1
+    });
+
+    gsap.to(".triangle .move_2", {
+      scrollTrigger: {
+        trigger: ".container__3",
+        toggleActions: "play none reset reverse",
+        markers: true
+      },
+      x: '70%',
+      y: '-10%',
+      ease: "smooth",
+      duration: 1.5,
+    });
+
+    gsap.to(".triangle .sept", {
+      scrollTrigger: {
+        trigger: ".container__3",
+        toggleActions: "restart pause reverse reverse",
+        markers: true
+      },
+      y: '-40%',
+      ease: "smooth",
+      duration: 1.5,
+      delay: 1.5
+    });
+    gsap.to(".triangle .six", {
+      scrollTrigger: {
+        trigger: ".pin-container",
+        toggleActions: "restart pause reverse reverse",
+        markers: true
+      },
+      x: '100%',
+      y: '-10%',
+      ease: "smooth",
+      duration: 1.5,
+      delay: 1.5
+    });
+
+    const tween2 = gsap.to(".triangle .neuf", {
+      scrollTrigger: {
+        trigger: ".container__3",
+        toggleActions: "restart pause reverse reverse",
+        start: ".pin-container",
+        markers: true
+      },
+      x: '105%',
+      y: '-15%',
+      ease: "smooth",
+      duration: 2,
+      onComplete: suite
+    });
+      
   }
-});
 
-const pinTl2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".container__3",
-    pin: ".fixe2",
-    start: "center center",
-    end: "+=700vh",
-    scrub: 0.75,
-    limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+  tween2.then(suite);
+
+  function suite(){
+
+    gsap.to(".triangle .neuf", {
+      
+      y: '-445%',
+      ease: "smooth",
+      duration: 2,
+    });
+    
   }
-});
 
 
+  /* /////////// */
+  /* CONTAINER 4 */
+  /* ////////// */
 
-
-tween.then(animContainer3);
-
-function animContainer3() {
+  const pinTl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container__4",
+      pin: ".fixe3",
+      start: "center center",
+      end: "+=700vh",
+      scrub: 0.75,
+      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+    }
+  });
 
   gsap.to(".triangle .move_1", {
     scrollTrigger: {
-      trigger: ".container__3",
+      trigger: ".container__4",
       toggleActions: "play none reset reverse",
       start:"top top",
       markers: true
     },
-    x: '40%',
+    x: '-40%',
     ease: "smooth",
     duration: 1
   });
 
-  gsap.to(".triangle .deux", {
-    scrollTrigger: {
-      trigger: ".container__3",
-      toggleActions: "play none reset reverse",
-      start:"top top",
-      markers: true
-    },
-    y: '-520%',
-    ease: "smooth",
-    duration: 1
-  });
+});
 
-  gsap.to(".triangle .move_2", {
-    scrollTrigger: {
-      trigger: ".container__3",
-      toggleActions: "play none reset reverse",
-      markers: true
-    },
-    x: '70%',
-    y: '-10%',
-    ease: "smooth",
-    duration: 1.5,
-  });
+  /* ////////////// */
+  /* MOBILE VERSION */
+  /* ////////////// */
+  /* MOBILE VERSION */
+  /* ////////////// */
 
-  gsap.to(".triangle .sept", {
-    scrollTrigger: {
-      trigger: ".container__3",
-      toggleActions: "restart pause reverse reverse",
-      markers: true
-    },
-    y: '-40%',
-    ease: "smooth",
-    duration: 1.5,
-    delay: 1.5
-  });
-  gsap.to(".triangle .six", {
-    scrollTrigger: {
-      trigger: ".pin-container",
-      toggleActions: "restart pause reverse reverse",
-      markers: true
-    },
-    x: '100%',
-    y: '-10%',
-    ease: "smooth",
-    duration: 1.5,
-    delay: 1.5
-  });
 
-  const tween2 = gsap.to(".triangle .neuf", {
-    scrollTrigger: {
-      trigger: ".container__3",
-      toggleActions: "restart pause reverse reverse",
-      start: ".pin-container",
-      markers: true
-    },
-    x: '105%',
-    y: '-15%',
-    ease: "smooth",
-    duration: 2,
-    onComplete: suite
-  });
-    
-}
-
-tween2.then(suite);
-
-function suite(){
-
-  gsap.to(".triangle .neuf", {
-    
-    y: '-445%',
-    ease: "smooth",
-    duration: 2,
-  });
+match.add("(max-width: 768px)", () => {
   
-}
+  gsap.from(".triangle",{
 
+    x:'1%',
+    y:'1%',
+    // opacity:1,
+    onComplete: action
 
-/* /////////// */
-/* CONTAINER 4 */
-/* ////////// */
+  })
+  
+  function action(){
 
-const pinTl3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".container__4",
-    pin: ".fixe3",
-    start: "center center",
-    end: "+=700vh",
-    scrub: 0.75,
-    limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+    gsap.to(".triangle", {
+      scrollTrigger: {
+        trigger: ".container__1",
+        start: "center center",
+        toggleActions: "restart none reset reverse",
+      },
+      y: "73vh",
+      x:"-10%",
+      ease: "smooth",
+      duration: 1.5,
+      scale:1.5
+    });
+  
+    gsap.to(".un,.deux, .trois, .quatre, .cinq, .six, .huit", {
+      scrollTrigger: {
+        trigger: ".container__1",
+        start: "center center",
+        toggleActions: "restart none reset reverse",
+      },
+      opacity:0
+    });
+  
+    gsap.to(".neuf, .sept", {
+      scrollTrigger: {
+        trigger: ".container__1",
+        start: "center center",
+        toggleActions: "restart none reset reverse",
+        pin:".container__2 .title__h3"
+      },
+      y:"30vh",
+      ease: "smooth",
+      duration: 1.5,
+      rotate:-90,
+      onComplete: action2
+    });
+    
+
   }
 });
 
-gsap.to(".triangle .move_1", {
+
+function action2(){
+
+  gsap.to(".triangle", {
+    scrollTrigger: {
+      trigger: ".container__3",
+      start: "bottom center ",
+      toggleActions: "restart none reset reverse",
+    },
+    y: "273vh",
+    
+    ease: "smooth",
+    duration: 1.5,
+    scale:1.5,
+    onComplete: action3
+  });
+  // gsap.to(".huit", {
+  //   scrollTrigger: {
+  //     trigger: ".container__3",
+  //     start: "bottom center ",
+  //     toggleActions: "restart none reset reverse",
+  //   },
+  //   // y: "273vh",
+  //   rotate:90,
+  //   opacity:1
+  // });
+
+
+}
+
+function action3(){
+
+  gsap.to(".triangle",{
+    scrollTrigger: {
+      trigger:".container__4",
+      start:"bottom center",
+      pin:true,
+      toggleActions:"restart none reset reverse"
+    },
+
+    y:"400vh",
+    ease:"smooth",
+    duration:1.5
+  })
+}
+gsap.set('.section', { autoAlpha: 0 })
+let sections = gsap.utils.toArray('.section');
+const sectionTl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container__4",
-    toggleActions: "play none reset reverse",
-    start:"top top",
-    markers: true
-  },
-  x: '-40%',
-  ease: "smooth",
-  duration: 1
+    trigger: ".dilemme",
+    pin: ".dilemme",
+    scrub: 0.5,
+    start: "top 35vh",
+    end: '+=950%',
+  }
+});
+
+sections.forEach(function(elem,i) {
+  
+  const tlDelay = i;
+  var titles = elem.querySelectorAll('.text');
+  var contentTL = gsap.timeline();
+
+  gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });    
+
+  contentTL
+    .to(elem, { autoAlpha: 1 }, tlDelay)
+    .from(titles, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
+    .to(elem, { autoAlpha: 0 });
+  
+  sectionTl.add(contentTL, tlDelay);
+
+});
+
+
+gsap.set('.section2', { autoAlpha: 0 })
+let sections2 = gsap.utils.toArray('.section2');
+const section2Tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".container__6",
+    pin: ".container__6",
+    scrub: 0.5,
+    start: "-25%",
+    end: '+=950%',
+    onLeave: () => gsap.to(".section-intro", { autoAlpha: 0 }),
+    onEnterBack: () => gsap.to(".section-intro", { autoAlpha: 1 }),
+  }
 });
 
 
 
+sections2.forEach(function(elem, i) {
+  const tlDelay = i;
+  var texte = elem.querySelectorAll('.text');
+  var logo = elem.querySelectorAll('.logo');
+  var title = elem.querySelectorAll('.section2 .title');
+  var contentTL = gsap.timeline();
 
+  gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });    
+ 
+  contentTL
+    .to(elem, { autoAlpha: 1 }, tlDelay)
+    .from(logo, { yPercent: 100, duration: 1, ease: 'power2.out', stagger: 0.4 })
+    .from(title, { xPercent: -300, duration: 0.2, ease: 'power2.out', stagger: 0.5 })
+    .from(texte, { yPercent: 190, duration: 0.2, ease: 'power2.out', stagger: 0.6 })
+    .to(elem, { autoAlpha: 0 });
+    
+  section2Tl.add(contentTL, tlDelay);
+});
 
 
 

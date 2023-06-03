@@ -6,6 +6,91 @@
 }
 
 
+@media only screen and (max-width: 768px){
+
+
+    .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
+
+       width: 80%;
+       margin: 0 auto;
+    }
+    .dilemme{
+
+        width: 90%;
+        height: 100vh;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .pin-container,.pin{
+        width: 0;
+    }
+
+    .section, .section2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        // margin: auto 0;
+        width: 100%;
+        // height: 80vh;
+        //background-color: #f27d0c;
+
+
+        .text{
+
+
+            margin:  50vh auto;
+            z-index: 5;
+        }
+        span{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 35%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .title{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 26%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .scener-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%) rotate(60deg);
+            z-index: 0;
+            opacity: 40%;
+        }
+        
+
+        .sync-logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 40%;
+        }
+        
+          
+
+        // .scener{
+
+        //     background: url(../../assets/images/scener-logo-wordmark.png);
+        //     background-size: 10%;
+        // }
+    }
+
+
+}
 
 
 @media only screen and (min-width: 1024px){
