@@ -7,35 +7,59 @@ import { PixiPlugin } from "gsap/dist/PixiPlugin";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin, PixiPlugin);
 
-
-gsap.set('.section', { autoAlpha: 0 })
+gsap.set('.section', { autoAlpha: 0 });
 
 var sections = gsap.utils.toArray('.section');
 
 var sectionTl = gsap.timeline({
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '#section-gsap',
     pin: '#section-gsap',
     scrub: 0.5,
     start: "top top",
     end: '+=950%',
   },
-})
+});
 
-
-sections.forEach(function(elem,i) {
-  
+sections.forEach(function (elem, i) {
   const tlDelay = i;
   var titles = elem.querySelectorAll('.text');
   var contentTL = gsap.timeline();
 
-  gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });    
+  gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
 
   contentTL
     .to(elem, { autoAlpha: 1 }, tlDelay)
     .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
     .to(elem, { autoAlpha: 0 });
-  
-  sectionTl.add(contentTL, tlDelay);
 
+  sectionTl.add(contentTL, tlDelay);
 });
+
+var sections2 = gsap.utils.toArray('.section2');
+
+var sectionTl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section-gsap2',
+    pin: '#section-gsap2',
+    scrub: 0.5,
+    start: "top top",
+    end: '+=950%',
+  },
+});
+
+sections2.forEach(function (elem, i) {
+  const tlDelay = i;
+  var titles = elem.querySelectorAll('.text');
+  var contentTL = gsap.timeline();
+
+  gsap.set('.section-about', { zIndex: (i, target, targets) => targets.length - i });
+
+  contentTL
+    .to(elem, { autoAlpha: 1 }, tlDelay)
+    .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
+    .to(elem, { autoAlpha: 0 });
+
+  sectionTl2.add(contentTL, tlDelay);
+});
+
