@@ -32,18 +32,26 @@ html {
   font-family: Lato;
 }
 
-.pin-spacer {
-  /* background: black; */
+.section-about, .section-about2{
+  width: 80%;
+  margin: 0 auto;
 }
-
 .section, .section2 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  /* background-color: #f27d0c; */
-  /* background: black; */
+
+}
+.section2 {
+  top: 170%;
+  display: flex;
+  .icon2{
+
+    justify-content: center;
+    width: 50%;
+  }
 }
 
 .circle {
@@ -54,7 +62,7 @@ html {
   overflow: hidden;
   width: 900px;
   min-height: 600px;
-  /* background: rgba(white, 0.09); */
+
 
   &-content {
     padding: 1rem;
@@ -103,7 +111,7 @@ html {
   transform: translate(-50%, -50%); */
 }
 .section-next2{
-  height: 100vh;
+  height: 50vh;
   // position: absolute;
   // width: 100%;
 }
