@@ -21,15 +21,9 @@ var sectionTl = gsap.timeline({
   },
 });
 
-
-
-
-
-
-
 let mm = gsap.matchMedia();
 
-mm.add("(min-width: 1024px)", () => {
+mm.add("(min-width: 800px)", () => {
   // desktop setup code here...
   sections.forEach(function (elem, i) {
     const tlDelay = i;
@@ -47,7 +41,7 @@ mm.add("(min-width: 1024px)", () => {
   });
 });
 
-mm.add("(max-width: 768px)", () => {
+mm.add("(max-width: 799px)", () => {
   // mobile setup code here...
   sections.forEach(function (elem, i) {
     const tlDelay = i;
@@ -77,7 +71,7 @@ var sectionTl2 = gsap.timeline({
   },
 });
 
-mm.add("(min-width: 1024px)", () => {
+mm.add("(min-width: 800px)", () => {
   // desktop setup code here...
   sections2.forEach(function (elem, i) {
     const tlDelay = i;
@@ -101,7 +95,7 @@ mm.add("(min-width: 1024px)", () => {
   });
 });
 
-mm.add("(max-width: 768px)", () => {
+mm.add("(max-width: 799px)", () => {
   // mobile setup code here...
   sections2.forEach(function (elem, i) {
     const tlDelay = i;
