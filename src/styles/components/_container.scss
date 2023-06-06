@@ -12,192 +12,361 @@
     padding: 0;
 }
 
+.section-about{
 
-@media only screen and (max-width: 768px){
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.section, .section2{
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+}
 
-    .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
-
-       width: 80%;
-       margin: 0 auto;
+.circle {
+    position: absolute;
+    top: 43%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 450px;
+    min-height: 460px;
+  
+  
+    &-content {
+      padding: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
     }
-    // .dilemme{
+}
 
-    //     width: 90%;
-    //     height: 100vh;
-    //     margin: 0 auto;
-    //     padding: 0;
-    // }
-    .pin-container,.pin{
-        width: 0;
-    }
 
-    .section, .section2 {
+.section-next2,.section-next,
+.section-previous {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  p{
+    text-align: left;
+    width: 80%;
+  }
+}
+.section-next2{
+  height: 100vh;
+  
+  position: absolute;
+  p, .section-next__title{
+    position: relative;
+    top: 10%;
+  }
+}
+
+.section-previous {
+
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+#section-gsap2 {
+  margin-top: 150vh;
+  
+}
+
+
+@media only screen and (max-width: 799px){
+
+    .section2{
+  
+      top: 70%;
+      
+      p{
+        width: 330px;
+      }
+      
+      .icon2{
         position: absolute;
-        top: 0;
-        left: 0;
-        // margin: auto 0;
-        width: 100%;
-        // height: 80vh;
-        //background-color: #f27d0c;
-
-
-        .text{
-
-
-            margin:  50vh auto;
-            z-index: 5;
+       
+        opacity: 30%;
+        top: 50%;
+      }
+      .kast{
+        width: 80%;
+      }
+      .sync{
+        width: 70%;
+        top: 20%;
+      }
+      .scener,.kast{
+        transform: rotate(60deg);
+  
+      }
+      #section-gsap2{
+  
+        .section-first{
+  
+          height: 50vh;
         }
-        span{
+      }
+    }
+    .section .circle{
+  
+      min-height: 700px;
+      .text {
+        top: -20%;
+        position: relative;
+      }
+    }
+  
+    
+  }
+  @media only screen and (min-width: 800px){
+  
+    .section2 {
+      top: 170%;
+      display: flex;
+      .icon2{
+    
+        justify-content: center;
+        width: 50%;
+      }
+      .sync{
+  
+        width: 20%;
+      }
+    }
+    .section-next,
+    .section-previous {
+  
+      p {
+        width: 65%;
+      }
+    }
+    .section-next{
+      height: 50vh;
+    
+    }
+  
+    .circle{
+      // top: 60%;
+      width: 900px;
+      min-height: 800px;
+      transform: translate(-50%, -50%);
+      .text {
+        top: -20%;
+        position: relative;
+      }
+    }
+  
+  }
+  @media only screen and(min-width: 1024px){.circle{top: 60%;}}
+  @media only screen and (min-width: 800px) and (max-width: 1023){
+    
+      .circle{
+        top: 10%;
+      }
+    
+  }
+  
 
-            position: absolute;
-            text-transform: uppercase;
-            top: 35%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .title{
+// @media only screen and (max-width: 768px){
 
-            position: absolute;
-            text-transform: uppercase;
-            top: 26%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .scener-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%) rotate(60deg);
-            z-index: 0;
-            opacity: 40%;
-        }
+
+//     .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
+
+//        width: 80%;
+//        margin: 0 auto;
+//     }
+//     // .dilemme{
+
+//     //     width: 90%;
+//     //     height: 100vh;
+//     //     margin: 0 auto;
+//     //     padding: 0;
+//     // }
+//     .pin-container,.pin{
+//         width: 0;
+//     }
+
+//     .section, .section2 {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         // margin: auto 0;
+//         width: 100%;
+//         // height: 80vh;
+//         //background-color: #f27d0c;
+
+
+//         .text{
+
+
+//             margin:  50vh auto;
+//             z-index: 5;
+//         }
+//         span{
+
+//             position: absolute;
+//             text-transform: uppercase;
+//             top: 35%;
+//             left: 50%;
+//             font-size: 50px;
+//             transform: translate(-50%, -50%);
+//         }
+//         .title{
+
+//             position: absolute;
+//             text-transform: uppercase;
+//             top: 26%;
+//             left: 50%;
+//             font-size: 50px;
+//             transform: translate(-50%, -50%);
+//         }
+//         .scener-logo {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             width: 100%;
+//             transform: translate(-50%, -50%) rotate(60deg);
+//             z-index: 0;
+//             opacity: 40%;
+//         }
         
 
-        .sync-logo{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            opacity: 40%;
-        }
+//         .sync-logo{
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             width: 100%;
+//             transform: translate(-50%, -50%);
+//             z-index: 0;
+//             opacity: 40%;
+//         }
         
           
 
-        // .scener{
+//         // .scener{
 
-        //     background: url(../../assets/images/scener-logo-wordmark.png);
-        //     background-size: 10%;
-        // }
-    }
-
-
-}
+//         //     background: url(../../assets/images/scener-logo-wordmark.png);
+//         //     background-size: 10%;
+//         // }
+//     }
 
 
-@media only screen and (min-width: 1024px){
-    .container__1{
-        display: flex;
+// }
+
+
+// @media only screen and (min-width: 1024px){
+//     .container__1{
+//         display: flex;
         
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
+//         flex-direction: column;
+//         align-items: left;
+//         justify-content: center;
      
-    }
+//     }
 
-    .pin{
+//     .pin{
 
-        top: 120vh;
-        position: absolute;
-    }
-    .pin2{
+//         top: 120vh;
+//         position: absolute;
+//     }
+//     .pin2{
        
-        position: absolute;
-    }
-    .pin-container{
-        top: 30%;
-        position: relative;
-    }
-    // .container__3{
+//         position: absolute;
+//     }
+//     .pin-container{
+//         top: 30%;
+//         position: relative;
+//     }
+//     // .container__3{
 
-    //     background: url(../assets/images/page3.png);
-    //     background-size: 100%;
-    //     opacity: 50%;
-    // }
+//     //     background: url(../assets/images/page3.png);
+//     //     background-size: 100%;
+//     //     opacity: 50%;
+//     // }
 
-    .container__6, .container__7{
+//     .container__6, .container__7{
 
-        height: 100vh;
-        width: 100%;
-    }
-    .section, .section2{
+//         height: 100vh;
+//         width: 100%;
+//     }
+//     .section, .section2{
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        //background-color: #f27d0c;
-        //background: black;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100vh;
+//         //background-color: #f27d0c;
+//         //background: black;
 
-        .text{
+//         .text{
 
 
-            margin:  50vh auto;
-            z-index: 5;
-        }
-        span{
+//             margin:  50vh auto;
+//             z-index: 5;
+//         }
+//         span{
 
-            position: absolute;
-            text-transform: uppercase;
-            top: 35%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .title{
+//             position: absolute;
+//             text-transform: uppercase;
+//             top: 35%;
+//             left: 50%;
+//             font-size: 50px;
+//             transform: translate(-50%, -50%);
+//         }
+//         .title{
 
-            position: absolute;
-            text-transform: uppercase;
-            top: 26%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .scener-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%) rotate(60deg);
-            z-index: 0;
-            opacity: 40%;
-        }
+//             position: absolute;
+//             text-transform: uppercase;
+//             top: 26%;
+//             left: 50%;
+//             font-size: 50px;
+//             transform: translate(-50%, -50%);
+//         }
+//         .scener-logo {
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             width: 100%;
+//             transform: translate(-50%, -50%) rotate(60deg);
+//             z-index: 0;
+//             opacity: 40%;
+//         }
         
 
-        .sync-logo{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            opacity: 40%;
-        }
-    }
+//         .sync-logo{
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             width: 100%;
+//             transform: translate(-50%, -50%);
+//             z-index: 0;
+//             opacity: 40%;
+//         }
+//     }
 
-    // h2,
-    // h3 {
-    //   position: relative;
-    //   font-family: sans-serif;
-    //   margin: 0;
-    //   color: white;
-    // }
+//     // h2,
+//     // h3 {
+//     //   position: relative;
+//     //   font-family: sans-serif;
+//     //   margin: 0;
+//     //   color: white;
+//     // }
 
     
-}
+// }
