@@ -95,7 +95,7 @@ html {
   }
 }
 
-.section-next2,
+.section-next2,.section-next,
 .section-previous {
   display: flex;
   align-items: center;
@@ -107,8 +107,16 @@ html {
     width: 80%;
   }
 }
+.section-next2{
+  height: 100vh;
+  
+  position: absolute;
+  p, .section-next__title{
+    position: relative;
+    top: 10%;
+  }
+}
 
-.section-next,
 .section-previous {
 
   width: 100%;
@@ -185,14 +193,14 @@ html {
       width: 20%;
     }
   }
-  .section-next2,
+  .section-next,
   .section-previous {
 
     p {
       width: 65%;
     }
   }
-  .section-next2{
+  .section-next{
     height: 50vh;
   
   }
