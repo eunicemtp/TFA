@@ -17,23 +17,52 @@ var sectionTl = gsap.timeline({
     pin: '#section-gsap',
     scrub: 0.5,
     start: "top top",
-    end: '+=750%',
+    end: '+=1500%',
   },
 });
 
-sections.forEach(function (elem, i) {
-  const tlDelay = i;
-  var titles = elem.querySelectorAll('.text');
-  var contentTL = gsap.timeline();
 
-  gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
 
-  contentTL
-    .to(elem, { autoAlpha: 1 }, tlDelay)
-    .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
-    .to(elem, { autoAlpha: 0 });
 
-  sectionTl.add(contentTL, tlDelay);
+
+
+
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 1024px)", () => {
+  // desktop setup code here...
+  sections.forEach(function (elem, i) {
+    const tlDelay = i;
+    var titles = elem.querySelectorAll('.text');
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .to(elem, { autoAlpha: 0 });
+  
+    sectionTl.add(contentTL, tlDelay);
+  });
+});
+
+mm.add("(max-width: 768px)", () => {
+  // mobile setup code here...
+  sections.forEach(function (elem, i) {
+    const tlDelay = i;
+    var titles = elem.querySelectorAll('.text');
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .to(elem, { autoAlpha: 0 });
+  
+    sectionTl.add(contentTL, tlDelay);
+  });
 });
 
 var sections2 = gsap.utils.toArray('.section2');
@@ -44,28 +73,54 @@ var sectionTl2 = gsap.timeline({
     pin: '#section-gsap2',
     scrub: 0.5,
     start: "top top",
-    end: '+=950%',
+    end: '+=750%',
   },
 });
 
-sections2.forEach(function (elem, i) {
-  const tlDelay = i;
-  var texte = elem.querySelectorAll('.text2');
-  var img = elem.querySelectorAll('.icon2');
-  var titles = elem.querySelectorAll('.titles_scroll')
-  var contentTL = gsap.timeline();
-
-  gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
-
-  contentTL
-    .to(elem, { autoAlpha: 1 }, tlDelay)
-    .from(texte, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
-    .from(img, { autoAlpha:0 })
-    .from(titles, { xPercent: 105, duration: 1, ease: 'power2.out', stagger: 0.6 })
-    
-    .to(elem, { autoAlpha: 0 })
-
-
-  sectionTl2.add(contentTL, tlDelay);
+mm.add("(min-width: 1024px)", () => {
+  // desktop setup code here...
+  sections2.forEach(function (elem, i) {
+    const tlDelay = i;
+    var texte = elem.querySelectorAll('.text2');
+    var img = elem.querySelectorAll('.icon2');
+    var titles = elem.querySelectorAll('.titles_scroll')
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(texte, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .from(img, { autoAlpha:0 })
+      .from(titles, { xPercent: 105, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      
+      .to(elem, { autoAlpha: 0 })
+  
+  
+    sectionTl2.add(contentTL, tlDelay);
+  });
 });
 
+mm.add("(max-width: 768px)", () => {
+  // mobile setup code here...
+  sections2.forEach(function (elem, i) {
+    const tlDelay = i;
+    var texte = elem.querySelectorAll('.text2');
+    var img = elem.querySelectorAll('.icon2');
+    var titles = elem.querySelectorAll('.titles_scroll')
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(img, { autoAlpha:0 })
+      .from(texte, { xPercent: -150, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .from(titles, { xPercent: 160, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      
+      .to(elem, { autoAlpha: 0 })
+  
+  
+    sectionTl2.add(contentTL, tlDelay);
+  });
+});

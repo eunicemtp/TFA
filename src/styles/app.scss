@@ -40,28 +40,21 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 100vh;
 
 }
-.section2 {
-  top: 170%;
-  display: flex;
-  .icon2{
 
-    justify-content: center;
-    width: 50%;
-  }
-}
+
 
 .circle {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 43%;
+  left: 60%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  width: 900px;
-  min-height: 600px;
+  width: 450px;
+  min-height: 460px;
 
 
   &-content {
@@ -69,7 +62,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    width: 80%;
     height: 100%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -79,7 +72,7 @@ html {
     font-size: 200px;
     font-family: sans-serif;
     color: white;
-    margin: 0;
+
   }
 
   h2,
@@ -88,6 +81,7 @@ html {
     font-family: sans-serif;
     margin: 0;
     color: white;
+    margin: 0 auto;
   }
 
   h2 {
@@ -101,20 +95,6 @@ html {
   }
 }
 
-.section-conclusion {
-  /* display: flex;
-  align-items: center;
-  position: absolute;
-  margin: 0 auto;
-  top: 50%;
-  left: -50%;
-  transform: translate(-50%, -50%); */
-}
-.section-next2{
-  height: 50vh;
-  // position: absolute;
-  // width: 100%;
-}
 .section-next2,
 .section-previous {
   display: flex;
@@ -122,41 +102,112 @@ html {
   justify-content: center;
   flex-direction: column;
 
-  p {
-    width: 65%;
+  p{
     text-align: left;
+    width: 80%;
   }
 }
 
 .section-next,
 .section-previous {
-  /* background: black; */
+
   width: 100%;
   height: 100vh;
   text-align: center;
   color: white;
   position: relative;
-
-  /* .first-title {
-    position: absolute;
-    text-transform: uppercase;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    transform: translate(-50%, -50%);
-  }
-  .first-para {
-    display: block;
-    font-size: 16px;
-    font-weight: 200;
-    letter-spacing: 2px;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-  } */
 }
 
 #section-gsap2 {
   margin-top: 150vh;
+  
 }
 
 
+@media only screen and (max-width: 768px){
+
+  .section2{
+
+    top: 70%;
+    
+    p{
+      width: 330px;
+    }
+    
+    .icon2{
+      position: absolute;
+     
+      opacity: 30%;
+      top: 50%;
+      // left: 20%;
+      // width: 50%;
+    }
+    .kast{
+      width: 80%;
+    }
+    .sync{
+      width: 70%;
+      top: 20%;
+    }
+    .scener,.kast{
+      transform: rotate(60deg);
+
+    }
+    #section-gsap2{
+
+      .section-first{
+
+        height: 50vh;
+      }
+    }
+  }
+  .section .circle{
+
+    min-height: 700px;
+    .text {
+      top: -20%;
+      position: relative;
+    }
+  }
+
+  
+}
+@media only screen and (min-width: 1024px){
+
+  .section2 {
+    top: 170%;
+    display: flex;
+    .icon2{
+  
+      justify-content: center;
+      width: 50%;
+    }
+    .sync{
+
+      width: 20%;
+    }
+  }
+  .section-next2,
+  .section-previous {
+
+    p {
+      width: 65%;
+    }
+  }
+  .section-next2{
+    height: 50vh;
+  
+  }
+
+  .circle{
+    top: 60%;
+    width: 900px;
+    min-height: 800px;
+    transform: translate(-50%, -50%);
+    .text {
+      top: -20%;
+      position: relative;
+    }
+  }
+
+}
