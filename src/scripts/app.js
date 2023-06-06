@@ -413,71 +413,117 @@ function action3(){
     duration:1.5
   })
 }
-gsap.set('.section', { autoAlpha: 0 })
-let sections = gsap.utils.toArray('.section');
-const sectionTl = gsap.timeline({
+gsap.set('.section', { autoAlpha: 0 });
+
+var sections = gsap.utils.toArray('.section');
+
+var sectionTl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".dilemme",
-    pin: ".dilemme",
+    trigger: '#section-gsap',
+    pin: '#section-gsap',
     scrub: 0.5,
-    start: "top 35vh",
-    end: '+=950%',
-  }
+    start: "top top",
+    end: '+=1500%',
+  },
 });
 
-sections.forEach(function(elem,i) {
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 800px)", () => {
+  // desktop setup code here...
+  sections.forEach(function (elem, i) {
+    const tlDelay = i;
+    var titles = elem.querySelectorAll('.text');
+    var contentTL = gsap.timeline();
   
-  const tlDelay = i;
-  var titles = elem.querySelectorAll('.text');
-  var contentTL = gsap.timeline();
-
-  gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });    
-
-  contentTL
-    .to(elem, { autoAlpha: 1 }, tlDelay)
-    .from(titles, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
-    .to(elem, { autoAlpha: 0 });
+    gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
   
-  sectionTl.add(contentTL, tlDelay);
-
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .to(elem, { autoAlpha: 0 });
+  
+    sectionTl.add(contentTL, tlDelay);
+  });
 });
 
+mm.add("(max-width: 799px)", () => {
+  // mobile setup code here...
+  sections.forEach(function (elem, i) {
+    const tlDelay = i;
+    var titles = elem.querySelectorAll('.text');
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .to(elem, { autoAlpha: 0 });
+  
+    sectionTl.add(contentTL, tlDelay);
+  });
+});
 
-gsap.set('.section2', { autoAlpha: 0 })
-let sections2 = gsap.utils.toArray('.section2');
-const section2Tl = gsap.timeline({
+var sections2 = gsap.utils.toArray('.section2');
+
+var sectionTl2 = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container__6",
-    pin: ".container__6",
+    trigger: '#section-gsap2',
+    pin: '#section-gsap2',
     scrub: 0.5,
-    start: "-25%",
-    end: '+=950%',
-    onLeave: () => gsap.to(".section-intro", { autoAlpha: 0 }),
-    onEnterBack: () => gsap.to(".section-intro", { autoAlpha: 1 }),
-  }
+    start: "top top",
+    end: '+=750%',
+  },
 });
 
-
-
-sections2.forEach(function(elem, i) {
-  const tlDelay = i;
-  var texte = elem.querySelectorAll('.text');
-  var logo = elem.querySelectorAll('.logo');
-  var title = elem.querySelectorAll('.section2 .title');
-  var contentTL = gsap.timeline();
-
-  gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });    
- 
-  contentTL
-    .to(elem, { autoAlpha: 1 }, tlDelay)
-    .from(logo, { yPercent: 100, duration: 1, ease: 'power2.out', stagger: 0.4 })
-    .from(title, { xPercent: -300, duration: 0.2, ease: 'power2.out', stagger: 0.5 })
-    .from(texte, { yPercent: 190, duration: 0.2, ease: 'power2.out', stagger: 0.6 })
-    .to(elem, { autoAlpha: 0 });
-    
-  section2Tl.add(contentTL, tlDelay);
+mm.add("(min-width: 800px)", () => {
+  // desktop setup code here...
+  sections2.forEach(function (elem, i) {
+    const tlDelay = i;
+    var texte = elem.querySelectorAll('.text2');
+    var img = elem.querySelectorAll('.icon2');
+    var titles = elem.querySelectorAll('.titles_scroll')
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(texte, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .from(img, { autoAlpha:0 })
+      .from(titles, { xPercent: 105, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      
+      .to(elem, { autoAlpha: 0 })
+  
+  
+    sectionTl2.add(contentTL, tlDelay);
+  });
 });
 
+mm.add("(max-width: 799px)", () => {
+  // mobile setup code here...
+  sections2.forEach(function (elem, i) {
+    const tlDelay = i;
+    var texte = elem.querySelectorAll('.text2');
+    var img = elem.querySelectorAll('.icon2');
+    var titles = elem.querySelectorAll('.titles_scroll')
+    var contentTL = gsap.timeline();
+  
+    gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
+  
+    contentTL
+      .to(elem, { autoAlpha: 1 }, tlDelay)
+      .from(img, { autoAlpha:0 })
+      .from(texte, { xPercent: -150, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      .from(titles, { xPercent: 160, duration: 1, ease: 'power2.out', stagger: 0.6 })
+      
+      .to(elem, { autoAlpha: 0 })
+  
+  
+    sectionTl2.add(contentTL, tlDelay);
+  });
+});
 
 
 /*
