@@ -139,9 +139,34 @@
 
         p{
 
-            grid-column:  3/ span 3;
+            grid-column:  5/  9;
             grid-row: 5;
             //margin-top: 3%;
+        }
+
+
+    }
+
+    .container__6{
+
+
+        display: grid;
+        grid-template-columns: repeat(10,200px);
+        grid-auto-rows:100px;
+
+
+
+        .title__h3{
+
+            grid-column:  2 /6;
+            grid-row: 1;
+        }
+
+        p{
+
+            grid-column:  4/ span 3;
+            grid-row: 3;
+            margin-top: 3%;
         }
 
 

@@ -13,27 +13,27 @@ svg{
 
     .sept{
 
-        fill: red;
+        // fill: red;
     }
     .huit{
 
-        fill: orange;
+        // fill: orange;
     }
 
     .six{
 
-        fill: green;
+        // fill: green;
     }
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 799px){
 
     svg{
 
-        margin: 0 -30vw;
-        height: 2%;
-        width: 120%;
+        margin: 0 -40vw;
+        width: 120%; 
+        height: 25%;
     }
 }
 
@@ -47,7 +47,7 @@ svg{
     svg{
 
 
-        // width: 145%;
+        // width: 145%; 
         float: right;
         right: -5%;
         margin-bottom: -10%;

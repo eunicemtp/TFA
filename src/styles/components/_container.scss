@@ -169,7 +169,7 @@
   
     .circle{
       // top: 60%;
-      width: 900px;
+      width: 950px;
       min-height: 800px;
       transform: translate(-50%, -50%);
       .text {
@@ -189,191 +189,215 @@
   }
   
 
-// @media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px){
 
 
-//     .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
+    .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
 
-//        width: 80%;
-//        margin: 0 auto;
-//     }
-//     // .dilemme{
+       width: 80%;
+       margin: 0 auto;
+    }
+    // .dilemme{
 
-//     //     width: 90%;
-//     //     height: 100vh;
-//     //     margin: 0 auto;
-//     //     padding: 0;
-//     // }
-//     .pin-container,.pin{
-//         width: 0;
-//     }
+    //     width: 90%;
+    //     height: 100vh;
+    //     margin: 0 auto;
+    //     padding: 0;
+    // }
+    .pin-container,.pin{
+        width: 0;
+    }
 
-//     .section, .section2 {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         // margin: auto 0;
-//         width: 100%;
-//         // height: 80vh;
-//         //background-color: #f27d0c;
-
-
-//         .text{
+    .section, .section2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        // margin: auto 0;
+        width: 100%;
+        // height: 80vh;
+        //background-color: #f27d0c;
 
 
-//             margin:  50vh auto;
-//             z-index: 5;
-//         }
-//         span{
+        .text{
 
-//             position: absolute;
-//             text-transform: uppercase;
-//             top: 35%;
-//             left: 50%;
-//             font-size: 50px;
-//             transform: translate(-50%, -50%);
-//         }
-//         .title{
 
-//             position: absolute;
-//             text-transform: uppercase;
-//             top: 26%;
-//             left: 50%;
-//             font-size: 50px;
-//             transform: translate(-50%, -50%);
-//         }
-//         .scener-logo {
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             width: 100%;
-//             transform: translate(-50%, -50%) rotate(60deg);
-//             z-index: 0;
-//             opacity: 40%;
-//         }
+            margin:  50vh auto;
+            z-index: 5;
+        }
+        span{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 35%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .title{
+
+            position: absolute;
+            text-transform: uppercase;
+            top: 26%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .scener-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%) rotate(60deg);
+            z-index: 0;
+            opacity: 40%;
+        }
         
 
-//         .sync-logo{
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             width: 100%;
-//             transform: translate(-50%, -50%);
-//             z-index: 0;
-//             opacity: 40%;
-//         }
+        .sync-logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 40%;
+        }
         
           
 
-//         // .scener{
+        // .scener{
 
-//         //     background: url(../../assets/images/scener-logo-wordmark.png);
-//         //     background-size: 10%;
-//         // }
-//     }
-
-
-// }
+        //     background: url(../../assets/images/scener-logo-wordmark.png);
+        //     background-size: 10%;
+        // }
+    }
 
 
-// @media only screen and (min-width: 1024px){
-//     .container__1{
-//         display: flex;
+}
+
+
+@media only screen and (min-width: 1024px){
+    .container__1{
+        display: flex;
         
-//         flex-direction: column;
-//         align-items: left;
-//         justify-content: center;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
      
-//     }
+    }
 
-//     .pin{
+    .pin{
 
-//         top: 120vh;
-//         position: absolute;
-//     }
-//     .pin2{
+        top: 120vh;
+        position: absolute;
+    }
+    .pin2{
        
-//         position: absolute;
-//     }
-//     .pin-container{
-//         top: 30%;
-//         position: relative;
-//     }
-//     // .container__3{
+        position: absolute;
+    }
+    .pin-container{
+        top: 30%;
+        position: relative;
+    }
+    // .container__3{
 
-//     //     background: url(../assets/images/page3.png);
-//     //     background-size: 100%;
-//     //     opacity: 50%;
-//     // }
+    //     background: url(../assets/images/page3.png);
+    //     background-size: 100%;
+    //     opacity: 50%;
+    // }
 
-//     .container__6, .container__7{
+    .container__6, .container__7{
 
-//         height: 100vh;
-//         width: 100%;
-//     }
-//     .section, .section2{
+        height: 100vh;
+        width: 100%;
+    }
+    .section, .section2{
 
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100vh;
-//         //background-color: #f27d0c;
-//         //background: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        //background-color: #f27d0c;
+        //background: black;
 
-//         .text{
+        .text{
 
 
-//             margin:  50vh auto;
-//             z-index: 5;
-//         }
-//         span{
+            margin:  50vh auto;
+            z-index: 5;
+            top: 0;
+        }
+        span{
 
-//             position: absolute;
-//             text-transform: uppercase;
-//             top: 35%;
-//             left: 50%;
-//             font-size: 50px;
-//             transform: translate(-50%, -50%);
-//         }
-//         .title{
+            position: absolute;
+            text-transform: uppercase;
+            top: 35%;
+            left: 50%;
+            font-size: 100px;
+            transform: translate(-50%, -50%);
+        }
+        .title{
 
-//             position: absolute;
-//             text-transform: uppercase;
-//             top: 26%;
-//             left: 50%;
-//             font-size: 50px;
-//             transform: translate(-50%, -50%);
-//         }
-//         .scener-logo {
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             width: 100%;
-//             transform: translate(-50%, -50%) rotate(60deg);
-//             z-index: 0;
-//             opacity: 40%;
-//         }
+            position: absolute;
+            text-transform: uppercase;
+            top: 26%;
+            left: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+        }
+        .scener-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%) rotate(60deg);
+            z-index: 0;
+            opacity: 40%;
+        }
         
 
-//         .sync-logo{
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             width: 100%;
-//             transform: translate(-50%, -50%);
-//             z-index: 0;
-//             opacity: 40%;
-//         }
-//     }
+        .sync-logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 40%;
+        }
+    }
 
-//     // h2,
-//     // h3 {
-//     //   position: relative;
-//     //   font-family: sans-serif;
-//     //   margin: 0;
-//     //   color: white;
-//     // }
+    // h2,
+    // h3 {
+    //   position: relative;
+    //   font-family: sans-serif;
+    //   margin: 0;
+    //   color: white;
+    // }
+
+.dilemme {
+
+  .title__h4{
+
+    margin-top: 10%;
+  }
+}
+
+.container__6{
+
+  .section2{
+
+
+    margin-top: 20%;
+    left: -25%;
+
+    .title__h4{
+      right: 0%;
+      top: 5%;
+    }
+  }
+}
 
     
-// }
+}

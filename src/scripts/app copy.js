@@ -7,7 +7,7 @@ import { PixiPlugin } from "gsap/dist/PixiPlugin";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin, PixiPlugin);
 
-const { from, to } = gsap;
+
 
 /* /////////// */
 /* BURGER MENU */
@@ -23,7 +23,7 @@ menuBurger.addEventListener("click", function () {
 function menuAffiche() {
     var menuClass = "menu--open",
         nav = document.getElementById("ancrage");
-
+  
     if (nav.classList.contains(menuClass) == true) {
       nav.classList.remove(menuClass); // Cache le menu
     } else {
@@ -43,8 +43,7 @@ ScrollTrigger.saveStyles(".mobile, .desktop");
 /* CONTAINER 2 */
 /* ////////// */
 
-
-match.add("(min-width: 769px)", () => {
+match.add("(min-width: 768px)", () => {
   const scenes = gsap.utils.toArray(".container__2");
   const height = (scenes.length - 1) * 400 + "%";
   const pinTl = gsap.timeline({
@@ -58,18 +57,17 @@ match.add("(min-width: 769px)", () => {
     }
   });
 
+
   gsap.from(".gauche", {
     x: "-200%",
     duration: 3,
-    delay: 4,
+    delay: 6,
     opacity: 0
   });
-
 
   gsap.from(".triangle", {
     x: '0',
     y: '0',
-    opacity:1,
     onComplete: function() {
       gsap.to(".triangle", {
         scrollTrigger: {
@@ -79,7 +77,7 @@ match.add("(min-width: 769px)", () => {
           pin: ".pin",
           end: "50vh",
           limitCallbacks: true, // Ajoutez cette option pour limiter les appels de rappel
-
+        
         },
         x: '-30%',
         y: '-18%',
@@ -98,7 +96,6 @@ match.add("(min-width: 769px)", () => {
             ease: "smooth",
             duration: 2,
             zIndex: 10,
-
             onComplete: function() {
               gsap.to(".triangle .huit", {
                 scrollTrigger: {
@@ -118,129 +115,229 @@ match.add("(min-width: 769px)", () => {
                 pin: '.pin',
                 x: 0,
 
-              });
+                onComplete: function() {
 
+                  gsap.to(".triangle", {
+                    trigger: ".container__3",
+                    start:"20vh top",
+                    opacity:0,
+                    duration:10,
+                    toggleActions: "restart pause reverse reverse",
+                  });
+                }
+                
+              });
+    
             }
           });
-
+          
         },
-
-
+        
+        
       });
-
+      
     },
 
   });
 
 
-  // Sélectionne les éléments que tu veux animer
-  const elementsToAnimate = document.querySelectorAll('.triangle .un, .triangle .deux, .triangle .trois, .triangle .quatre, .triangle .cinq, .triangle .six, .triangle .sept');
 
-  // Sélectionne l'élément .container__2
-  const container = document.querySelector('.container__2');
+  // Réduire la répétition de code pour .neuf et .huit dans .container__2
+  // gsap.to([".triangle .neuf", ".triangle .huit"], {
+  //   x: "0%",
+  //   y: "0%",
+  //   ease: "smooth",
+  //   duration: 1,
+  //   scrollTrigger: {
+  //     trigger: ".container__2",
+  //     start: "bottom center",
+  //     end: "+=700vh",
+  //     toggleActions: "play none reset reverse",
+  //     onLeaveBack: () => {
+  //       gsap.to([".triangle .neuf", ".triangle .huit"], {
+  //         x: "105%",
+  //         y: "-15%",
+  //         ease: "smooth",
+  //         duration: 1
+  //       });
+  //     }
+  //   }
+  // });
 
-  // Crée une timeline GSAP pour l'animation du trigger
-  const tl = gsap.timeline({
-    paused: true // L'animation démarre en pause
-  });
+  /* /////////// */
+  /* CONTAINER 3 */
+  /* ////////// */
 
-  // Utilise GSAP pour animer l'opacité des éléments
-  to(elementsToAnimate, {
-    opacity: 1,         // Opacité cible
-    duration: 0.5,      // Durée de l'animation en secondes
-    ease: 'power1.out', // Courbe d'animation (facultatif, tu peux ajuster cela)
-    stagger: 0.1,       // Délai entre chaque élément
-    onComplete: () => tl.reverse() // Inverse la timeline une fois l'animation complétée
-  });
+  const tween = gsap.to([".triangle .neuf", ".triangle .huit"], {
+    x: "0%",
+    y: "0%",
+    ease: "smooth",
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".container__2",
+      start: "bottom center",
+      
+      end: "+=700vh",
+      toggleActions: "play none reset reset",
+      onLeaveBack: () => {
 
-  // Utilise GSAP pour animer l'opacité des éléments jusqu'à 0
-  tl.to(elementsToAnimate, {
-    opacity: 0,          // Opacité cible
-    duration: 0.5,       // Durée de l'animation en secondes
-    ease: 'power1.inOut', // Courbe d'animation (facultatif, tu peux ajuster cela)
-    stagger: 0.1,        // Délai entre chaque élément
-    onComplete: () => { 
-      tl.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
+        gsap.to([".triangle .neuf", ".triangle .huit"], {
+          x: "105%",
+          y: "-15%",
+          ease: "smooth",
+          duration: 1,
+         onComplete: animContainer3
+        });
+      }
     }
   });
 
-  // Déclenche l'animation lorsque l'élément .container__2 est atteint
-  ScrollTrigger.create({
-    trigger: 'container__2',
-    start: 'top top',
-    onEnter: () => tl.play(),
-    onLeaveBack: () => tl.reverse() // Inverse la timeline lorsque l'élément .container__2 est quitté en faisant défiler vers le haut
-  });
-  // Sélectionne les éléments que tu veux animer
-  const elementsToAnimate2 = document.querySelectorAll('.triangle .un, .triangle .trois, .triangle .quatre, .triangle .cinq, .triangle .six, .triangle .sept');
-
-  // Sélectionne l'élément .container__2
-
-
-  // Crée une timeline GSAP pour l'animation du trigger
-
-
-  // Utilise GSAP pour animer l'opacité des éléments
-  to(elementsToAnimate2, {
-    opacity: 1,         // Opacité cible
-    duration: 0.5,      // Durée de l'animation en secondes
-    ease: 'power1.out', // Courbe d'animation (facultatif, tu peux ajuster cela)
-    stagger: 0.1,       // Délai entre chaque élément
-    onComplete: () => tl.reverse() // Inverse la timeline une fois l'animation complétée
-  });
-
-  // Utilise GSAP pour animer l'opacité des éléments jusqu'à 0
-  tl.to(elementsToAnimate2, {
-    opacity: 0,          // Opacité cible
-    duration: 0.5,       // Durée de l'animation en secondes
-    ease: 'power1.inOut', // Courbe d'animation (facultatif, tu peux ajuster cela)
-    stagger: 0.1,        // Délai entre chaque élément
-    onComplete: () => { 
-      tl.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
+  const pinTl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container__3",
+      pin: ".fixe2",
+      start: "center center",
+      end: "+=700vh",
+      scrub: 0.75,
+      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
     }
   });
 
-  // Déclenche l'animation lorsque l'élément .container__2 est atteint
-  ScrollTrigger.create({
-    trigger: 'container__2',
-    start: 'top top',
-    onEnter: () => tl.play(),
-    onLeaveBack: () => tl.reverse() // Inverse la timeline lorsque l'élément .container__2 est quitté en faisant défiler vers le haut
+
+
+
+  // tween.then(animContainer3);
+
+  // function animContainer3() {
+
+  //   gsap.to(".triangle .move_1", {
+  //     scrollTrigger: {
+  //       trigger: ".container__3",
+  //       toggleActions: "play none reset reverse",
+  //       start:"top top",
+  //       markers: true
+  //     },
+  //     x: '40%',
+  //     ease: "smooth",
+  //     duration: 1
+  //   });
+
+  //   gsap.to(".triangle .deux", {
+  //     scrollTrigger: {
+  //       trigger: ".container__3",
+  //       toggleActions: "play none reset reverse",
+  //       start:"top top",
+  //       markers: true
+  //     },
+  //     y: '-520%',
+  //     ease: "smooth",
+  //     duration: 1
+  //   });
+
+  //   gsap.to(".triangle .move_2", {
+  //     scrollTrigger: {
+  //       trigger: ".container__3",
+  //       toggleActions: "play none reset reverse",
+  //       markers: true
+  //     },
+  //     x: '70%',
+  //     y: '-10%',
+  //     ease: "smooth",
+  //     duration: 1.5,
+  //   });
+
+  //   gsap.to(".triangle .sept", {
+  //     scrollTrigger: {
+  //       trigger: ".container__3",
+  //       toggleActions: "restart pause reverse reverse",
+  //       markers: true
+  //     },
+  //     y: '-40%',
+  //     ease: "smooth",
+  //     duration: 1.5,
+  //     delay: 1.5
+  //   });
+  //   gsap.to(".triangle .six", {
+  //     scrollTrigger: {
+  //       trigger: ".pin-container",
+  //       toggleActions: "restart pause reverse reverse",
+  //       markers: true
+  //     },
+  //     x: '100%',
+  //     y: '-10%',
+  //     ease: "smooth",
+  //     duration: 1.5,
+  //     delay: 1.5
+  //   });
+
+  //   const tween2 = gsap.to(".triangle .neuf", {
+  //     scrollTrigger: {
+  //       trigger: ".container__3",
+  //       toggleActions: "restart pause reverse reverse",
+  //       start: ".pin-container",
+  //       markers: true
+  //     },
+  //     x: '105%',
+  //     y: '-15%',
+  //     ease: "smooth",
+  //     duration: 2,
+  //     onComplete: suite
+  //   });
+      
+  // }
+
+  // tween2.then(suite);
+
+  // function suite(){
+
+  //   gsap.to(".triangle .neuf", {
+      
+  //     y: '-445%',
+  //     ease: "smooth",
+  //     duration: 2,
+  //   });
+    
+  // }
+
+
+  /* /////////// */
+  /* CONTAINER 4 */
+  /* ////////// */
+
+  const pinTl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container__4",
+      pin: ".fixe3",
+      start: "center center",
+      end: "+=700vh",
+      scrub: 0.75,
+      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+    }
   });
 
-
+  gsap.to(".triangle .move_1", {
+    scrollTrigger: {
+      trigger: ".container__4",
+      toggleActions: "play none reset reverse",
+      start:"top top",
+      markers: true
+    },
+    x: '-40%',
+    ease: "smooth",
+    duration: 1
+  });
 
 });
 
-// gsap.to(".triangle .un,.deux, .trois, .quatre, .cinq, .six,.sept", {
-//   // scrollTrigger: {
-//   //   trigger: ".container__2",
-//   //   toggleActions: "play none reset reverse",
-//   //   start: ".pin",
-//   //   markers: true
-//   // },
-//   trigger: ".container__2",
-//   opacity:0,
-//   ease: "smooth",
-//   duration: 2,
-//   start:"top",
-//   // zIndex: 10,
-// });
-
-
-
-
-
-
-/* ////////////// */
-/* MOBILE VERSION */
-/* ////////////// */
-/* MOBILE VERSION */
-/* ////////////// */
+  /* ////////////// */
+  /* MOBILE VERSION */
+  /* ////////////// */
+  /* MOBILE VERSION */
+  /* ////////////// */
 
 
 match.add("(max-width: 768px)", () => {
-
+  
   gsap.from(".triangle",{
 
     x:'1%',
@@ -249,7 +346,7 @@ match.add("(max-width: 768px)", () => {
     onComplete: action
 
   })
-
+  
   function action(){
 
     gsap.to(".triangle", {
@@ -264,7 +361,7 @@ match.add("(max-width: 768px)", () => {
       duration: 1.5,
       scale:1.5
     });
-
+  
     gsap.to(".un,.deux, .trois, .quatre, .cinq, .six, .huit", {
       scrollTrigger: {
         trigger: ".container__1",
@@ -273,7 +370,7 @@ match.add("(max-width: 768px)", () => {
       },
       opacity:0
     });
-
+  
     gsap.to(".neuf, .sept", {
       scrollTrigger: {
         trigger: ".container__1",
@@ -287,7 +384,7 @@ match.add("(max-width: 768px)", () => {
       rotate:-90,
       onComplete: action2
     });
-
+    
 
   }
 });
@@ -302,7 +399,7 @@ function action2(){
       toggleActions: "restart none reset reverse",
     },
     y: "273vh",
-
+    
     ease: "smooth",
     duration: 1.5,
     scale:1.5,
@@ -359,14 +456,14 @@ mm.add("(min-width: 800px)", () => {
     const tlDelay = i;
     var titles = elem.querySelectorAll('.text');
     var contentTL = gsap.timeline();
-
+  
     gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
-
+  
     contentTL
       .to(elem, { autoAlpha: 1 }, tlDelay)
       .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
       .to(elem, { autoAlpha: 0 });
-
+  
     sectionTl.add(contentTL, tlDelay);
   });
 });
@@ -377,14 +474,14 @@ mm.add("(max-width: 799px)", () => {
     const tlDelay = i;
     var titles = elem.querySelectorAll('.text');
     var contentTL = gsap.timeline();
-
+  
     gsap.set('.section', { zIndex: (i, target, targets) => targets.length - i });
-
+  
     contentTL
       .to(elem, { autoAlpha: 1 }, tlDelay)
       .from(titles, { xPercent: -100, duration: 1, ease: 'power2.out', stagger: 0.6 })
       .to(elem, { autoAlpha: 0 });
-
+  
     sectionTl.add(contentTL, tlDelay);
   });
 });
@@ -409,18 +506,18 @@ mm.add("(min-width: 800px)", () => {
     var img = elem.querySelectorAll('.icon2');
     var titles = elem.querySelectorAll('.titles_scroll')
     var contentTL = gsap.timeline();
-
+  
     gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
-
+  
     contentTL
       .to(elem, { autoAlpha: 1 }, tlDelay)
       .from(texte, { xPercent: -105, duration: 1, ease: 'power2.out', stagger: 0.6 })
       .from(img, { autoAlpha:0 })
       .from(titles, { xPercent: 105, duration: 1, ease: 'power2.out', stagger: 0.6 })
-
+      
       .to(elem, { autoAlpha: 0 })
-
-
+  
+  
     sectionTl2.add(contentTL, tlDelay);
   });
 });
@@ -433,18 +530,18 @@ mm.add("(max-width: 799px)", () => {
     var img = elem.querySelectorAll('.icon2');
     var titles = elem.querySelectorAll('.titles_scroll')
     var contentTL = gsap.timeline();
-
+  
     gsap.set('.section2', { zIndex: (i, target, targets) => targets.length - i });
-
+  
     contentTL
       .to(elem, { autoAlpha: 1 }, tlDelay)
       .from(img, { autoAlpha:0 })
       .from(texte, { xPercent: -150, duration: 1, ease: 'power2.out', stagger: 0.6 })
       .from(titles, { xPercent: 160, duration: 1, ease: 'power2.out', stagger: 0.6 })
-
+      
       .to(elem, { autoAlpha: 0 })
-
-
+  
+  
     sectionTl2.add(contentTL, tlDelay);
   });
 });
@@ -454,8 +551,8 @@ mm.add("(max-width: 799px)", () => {
 gsap.to(".triangle .un", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-235%',
   y:'-10%',
@@ -468,7 +565,7 @@ gsap.to(".triangle .un", {
 gsap.to(".triangle .deux", {
   scrollTrigger: {
       trigger: ".container__2",
-
+      
   },
   x:'-195%',
   y:'-125%',
@@ -481,8 +578,8 @@ gsap.to(".triangle .deux", {
 gsap.to(".triangle .trois", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-381%',
   y:'-100%',
@@ -495,8 +592,8 @@ gsap.to(".triangle .trois", {
 gsap.to(".triangle .quatre", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-480%',
   y:'-15%',
@@ -509,8 +606,8 @@ gsap.to(".triangle .quatre", {
 gsap.to(".triangle .cinq", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-530%',
   y:'-77%',
@@ -523,8 +620,8 @@ gsap.to(".triangle .cinq", {
 gsap.to(".triangle .six", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-194%',
   y:'-83%',
@@ -537,8 +634,8 @@ gsap.to(".triangle .six", {
 gsap.to(".triangle .sept", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-428%',
   y:'-29%',
@@ -551,8 +648,8 @@ gsap.to(".triangle .sept", {
 gsap.to(".triangle .huit", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'-300%',
   y:'120%',
@@ -565,8 +662,8 @@ gsap.to(".triangle .huit", {
 gsap.to(".triangle .neuf", {
   scrollTrigger: {
       trigger: ".container__2",
-
-
+      
+      
   },
   x:'220%',
   y:'85%',
