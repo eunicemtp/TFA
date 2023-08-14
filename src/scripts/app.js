@@ -134,7 +134,7 @@ match.add("(min-width: 769px)", () => {
 
 
   // Sélectionne les éléments que tu veux animer
-  const elementsToAnimate = document.querySelectorAll('.triangle .un, .triangle .deux, .triangle .trois, .triangle .quatre, .triangle .cinq, .triangle .six, .triangle .sept');
+  const elementsToAnimate = document.querySelectorAll('.triangle .un, .triangle .deux, .triangle .trois, .triangle .cinq, .triangle .six');
 
   // Sélectionne l'élément .container__2
   const container = document.querySelector('.container__2');
@@ -171,14 +171,23 @@ match.add("(min-width: 769px)", () => {
     onEnter: () => tl.play(),
     onLeaveBack: () => tl.reverse() // Inverse la timeline lorsque l'élément .container__2 est quitté en faisant défiler vers le haut
   });
+
+  const hide = document.querySelectorAll('.triangle .un, .triangle .deux, .triangle .trois,.triangle .quatre, .triangle .cinq, .triangle .six, .triangle .sept, .triangle .huit, .triangle .neuf');
+  const tl2 = gsap.timeline({
+    paused: true // L'animation démarre en pause
+  });
+
+  from(hide, {
+    opacity: 0,         // Opacité cible
+    duration: 0.5,      // Durée de l'animation en secondes
+    ease: 'power1.out', // Courbe d'animation (facultatif, tu peux ajuster cela)
+    stagger: 0.1,       // Délai entre chaque élément
+    onComplete: () => tl2.reverse() // Inverse la timeline une fois l'animation complétée
+  });
+
+
   // Sélectionne les éléments que tu veux animer
-  const elementsToAnimate2 = document.querySelectorAll('.triangle .un, .triangle .trois, .triangle .quatre, .triangle .cinq, .triangle .six, .triangle .sept');
-
-  // Sélectionne l'élément .container__2
-
-
-  // Crée une timeline GSAP pour l'animation du trigger
-
+  const elementsToAnimate2 = document.querySelectorAll('.triangle .un, .triangle .trois, .triangle .quatre, .triangle .six, .triangle .sept');
 
   // Utilise GSAP pour animer l'opacité des éléments
   to(elementsToAnimate2, {
@@ -186,26 +195,26 @@ match.add("(min-width: 769px)", () => {
     duration: 0.5,      // Durée de l'animation en secondes
     ease: 'power1.out', // Courbe d'animation (facultatif, tu peux ajuster cela)
     stagger: 0.1,       // Délai entre chaque élément
-    onComplete: () => tl.reverse() // Inverse la timeline une fois l'animation complétée
+    onComplete: () => tl2.reverse() // Inverse la timeline une fois l'animation complétée
   });
 
   // Utilise GSAP pour animer l'opacité des éléments jusqu'à 0
-  tl.to(elementsToAnimate2, {
+  tl2.to(elementsToAnimate2, {
     opacity: 0,          // Opacité cible
     duration: 0.5,       // Durée de l'animation en secondes
     ease: 'power1.inOut', // Courbe d'animation (facultatif, tu peux ajuster cela)
     stagger: 0.1,        // Délai entre chaque élément
     onComplete: () => { 
-      tl.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
+      tl2.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
     }
   });
 
   // Déclenche l'animation lorsque l'élément .container__2 est atteint
   ScrollTrigger.create({
-    trigger: 'container__2',
-    start: 'top top',
-    onEnter: () => tl.play(),
-    onLeaveBack: () => tl.reverse() // Inverse la timeline lorsque l'élément .container__2 est quitté en faisant défiler vers le haut
+    trigger: 'container__3',
+    start: 'top center',
+    onEnter: () => t2l.play(),
+    onLeaveBack: () => tl2.reverse() // Inverse la timeline lorsque l'élément .container__2 est quitté en faisant défiler vers le haut
   });
 
 
