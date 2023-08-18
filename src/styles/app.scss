@@ -35,10 +35,14 @@ body{
 
             width: 200px;
             top: 45vh;
-            position: absolute;
+            position: relative;
             left: 10%;
         }
 
+    }
+    .image_logo{
+
+        margin-top: 30vh;
     }
 
     @media only screen and (max-width: 768px){
@@ -53,6 +57,17 @@ body{
                 left: 20%;
             }
 
+        }
+
+        .image_logo{
+
+            display: flex;
+            flex-direction: column;
+            margin-top: 65%;
+            left: 50%;
+            transform: translate(50%);
+            justify-content: start;
+            
         }
     }
 

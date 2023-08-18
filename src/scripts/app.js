@@ -54,16 +54,16 @@ ScrollTrigger.saveStyles(".mobile, .desktop");
 match.add("(min-width: 800px)", () => {
   // const scenes = gsap.utils.toArray(".container__2");
   // const height = (scenes.length - 1) * 400 + "%";
-  const pinTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".container__2",
-      pin: ".fixe",
-      start: "center center",
-      end: "+=950vh",
-      scrub: 0.75,
-      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
-    }
-  });
+  // const pinTl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".container__2",
+  //     pin: ".fixe",
+  //     start: "center center",
+  //     end: "+=950vh",
+  //     scrub: 0.75,
+  //     limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+  //   }
+  // });
 
   // gsap.from(".gauche", {
   //   x: "-200%",
@@ -244,16 +244,16 @@ match.add("(min-width: 800px)", () => {
     
   // });
 
-  const pinTl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".container__3",
-      pin: ".fixe2",
-      start: "center center",
-      end: "+=700vh",
-      scrub: 0.75,
-      limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
-    }
-  });
+  // const pinTl2 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".container__3",
+  //     pin: ".fixe2",
+  //     start: "center center",
+  //     end: "+=700vh",
+  //     scrub: 0.75,
+  //     limitCallbacks: true // Ajoutez cette option pour limiter les appels de rappel
+  //   }
+  // });
 
   // tween.then(animContainer3);
 
@@ -385,7 +385,7 @@ match.add("(min-width: 800px)", () => {
     paused: true, // L'animation démarre en pause
     scrollTrigger:{
       trigger:'.container__4',
-      start:'top top',
+      start:'top -15vh',
       onEnter: () => opacityTimeline.play(),
       onLeaveBack: () => opacityTimeline.reverse(), // Inverse la timeline lorsque container__3 est quitté en faisant défiler vers le haut
     }
