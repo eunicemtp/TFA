@@ -1,7 +1,7 @@
 svg{
 
     position: absolute;
-    // width: 80%;
+
 
 
     path{
@@ -11,19 +11,6 @@ svg{
         stroke-width: 5px;
     }
 
-    .sept{
-
-        // fill: red;
-    }
-    .huit{
-
-        // fill: orange;
-    }
-
-    .six{
-
-        // fill: green;
-    }
 }
 
 
@@ -31,7 +18,7 @@ svg{
 
     position: relative;
     top: 80vh;
-    //right: 30%;
+
     width: 90%;
 }
 #Pyramide{
@@ -76,7 +63,7 @@ svg{
 
     svg{
 
-        // margin: 0px -25vw;
+
         top: 50vh;
         position: absolute;
         width: 130%;
@@ -107,14 +94,8 @@ svg{
 }
 @media only screen and (min-width: 1024px){
 
-    // .triangle g{
-
-    //     width: 50%;
-    // }
     svg{
 
-
-        // width: 145%; 
         float: right;
         right: -5%;
         margin-bottom: -10%;
