@@ -122,17 +122,17 @@ match.add("(min-width: 800px)", () => {
     }
   });
 
-  // Utilise GSAP pour animer l'opacité de l'élément hide jusqu'à 0
-  opacityTimeline.to(hide, {
-    opacity: 0,          // Opacité cible
-    duration: 0.5,       // Durée de l'animation en secondes
-    ease: 'power1.inOut', // Courbe d'animation (facultatif, tu peux ajuster cela)
-    stagger: 0.1,        // Délai entre chaque élément
+  // // Utilise GSAP pour animer l'opacité de l'élément hide jusqu'à 0
+  // opacityTimeline.to(hide, {
+  //   opacity: 0,          // Opacité cible
+  //   duration: 0.5,       // Durée de l'animation en secondes
+  //   ease: 'power1.inOut', // Courbe d'animation (facultatif, tu peux ajuster cela)
+  //   stagger: 0.1,        // Délai entre chaque élément
 
-    onComplete: () => { 
-      opacityTimeline.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
-    }
-  });
+  //   onComplete: () => { 
+  //     opacityTimeline.reversed(false); // Annule l'état inversé de la timeline lorsque l'animation est terminée
+  //   }
+  // });
 
 
   opacityTimeline.to(".triangle2", {
