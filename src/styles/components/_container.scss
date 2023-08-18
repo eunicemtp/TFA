@@ -249,6 +249,8 @@ footer{
     .scene {
       margin: 0 auto;
       width: 67%;
+      
+
     }
     .circle-content {
       
@@ -258,6 +260,15 @@ footer{
       width: 80%;
       height: 40%;
     }
+
+  }
+
+  .scene{
+    margin-left: 5%;
+    width: 80%;
+  }
+  img.logoStream {
+    margin-left: 10%;
   }
 
   .titles_scroll {
@@ -469,12 +480,12 @@ footer{
 
 @media only screen and (min-width: 540px){  
   
-  .section-next2 p {
-    text-align: left;
-    width: 90%;
-    left: 50%;
-    transform: translate(-50%);
-  }
+  // .section-next2 p {
+  //   text-align: left;
+  //   width: 90%;
+  //   left: 50%;
+  //   transform: translate(-50%);
+  // }
 }
 
 
@@ -508,7 +519,7 @@ footer{
     //     opacity: 50%;
     // }
 
-    .container__6, .container__7{
+    .container__6{
 
         height: 100vh;
         width: 100%;
@@ -578,30 +589,49 @@ footer{
     //   color: white;
     // }
 
-.dilemme {
-
-  .title__h4{
-
-    margin-top: 10%;
-  }
-
-
-}
-
-.container__6{
-
-  .section2{
-
-
-    margin-top: 20%;
-    left: -25%;
+  .dilemme {
 
     .title__h4{
-      right: 0%;
-      top: 5%;
+
+      margin-top: 10%;
+    }
+
+
+  }
+
+  .container__6{
+
+    .section2{
+
+
+      margin-top: 20%;
+      left: -25%;
+
+      .title__h4{
+        right: 0%;
+        top: 5%;
+      }
     }
   }
-}
+
+  .container__7{
+    height: 150vh;
+    .first__p
+    {
+
+      width: 40%;
+      left: -20%;
+      // margin-top: 5%;
+      margin-bottom: 15%;
+    }
+
+    p{
+      width: 70%;
+
+      
+    }
+
+  }
 
 
     

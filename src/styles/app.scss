@@ -21,5 +21,44 @@ body{
     color: #eee5e5;
     font-size: 25px;
     
+
+    .logoStream{
+
+        position: relative;
+        height: 150px;
+        top: 36vh;
+
+    }
+
+    .container__2{
+        .extention__img{
+
+            width: 200px;
+            top: 45vh;
+            position: absolute;
+            left: 10%;
+        }
+
+    }
+
+    @media only screen and (max-width: 768px){
+
+
+        .container__2{
+            .extention__img{
+
+                width: 150px;
+                top: 33vh;
+                position: relative;
+                left: 20%;
+            }
+
+        }
+    }
+
+
+    
 }
+
+
 

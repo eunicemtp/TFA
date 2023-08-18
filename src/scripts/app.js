@@ -51,7 +51,7 @@ ScrollTrigger.saveStyles(".mobile, .desktop");
 // /* ////////// */
 
 
-match.add("(min-width: 769px)", () => {
+match.add("(min-width: 800px)", () => {
   // const scenes = gsap.utils.toArray(".container__2");
   // const height = (scenes.length - 1) * 400 + "%";
   const pinTl = gsap.timeline({
