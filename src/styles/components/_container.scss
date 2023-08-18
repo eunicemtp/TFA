@@ -3,6 +3,12 @@
     width: 100vw;
     height: 100vh;
 
+   
+
+}
+.container__2 *:not(:nth-child(n+8)) {
+  top: -5vh;
+  position: relative;
 }
 .dilemme{
 
@@ -86,6 +92,50 @@
   
 }
 
+footer{
+  position: fixed;
+  height: 5vh;
+  z-index: 100;
+  bottom: -0vh;
+  margin-right: 30%;
+  width: 100%;
+  background-color:  #9F2222;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  
+
+  small{
+    a{
+
+      text-decoration: none;
+
+      color: whitesmoke;
+    }
+    a:hover{
+      color: whitesmoke;
+    }
+    color: whitesmoke;
+  }
+}
+
+// .container__7{
+
+//   position: absolute;
+//   bottom: -100vh;
+// }
+
+.container__7 *{
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-top: -1%;
+  // top:0;
+  height: 90vh;
+}
+
 
 @media only screen and (max-width: 799px){
 
@@ -139,8 +189,8 @@
     }
   
     
-  }
-  @media only screen and (min-width: 800px){
+}
+@media only screen and (min-width: 800px){
   
     .section2 {
       top: 170%;
@@ -178,101 +228,253 @@
       }
     }
   
-  }
-  @media only screen and(min-width: 1024px){.circle{top: 60%;}}
-  @media only screen and (min-width: 800px) and (max-width: 1023){
-    
-      .circle{
-        top: 10%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px){
+
+
+}
+@media only screen and(min-width: 1024px){.circle{top: 60%;}}
+@media only screen and (min-width: 801px) and (max-width: 1023px){
+  .dilemme{
+
+    .circle{
+      top: 50%;
+      position: relative;
+      .text {
+        top: 5%;
+        
       }
-    
+    }
+    .scene {
+      margin: 0 auto;
+      width: 67%;
+    }
+    .circle-content {
+      
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      width: 80%;
+      height: 40%;
+    }
   }
-  
+
+  .titles_scroll {
+    top: 30%;
+    position: relative;
+    font-size: 40px;
+  }
+
+  .container__6{
+    .section--sync{
+      .circle-content {
+        padding: 1rem;
+        position: absolute;
+        top: 9%;
+        //left: 50%;
+        //width: 80%;
+        //height: 70%;
+
+        h4{
+          position: relative;
+          top: 42%;
+        }
+        .icon2{
+
+          position: relative;
+          top: 20%;
+        }
+
+        p{
+
+          position: relative;
+          top: 20%;
+        }
+
+      }
+    }
+  }
+
+    
+}
+@media only screen and (min-width:769px) and (max-width:800px) {
+  .dilemme{
+    .circle-content {
+      padding: 1rem;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      width: 80%;
+      height: 90%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      
+    }
+    .section .circle .text {
+      top: 5%;
+      position: relative;
+    }
+
+    .scene {
+      margin: 0 auto;
+      width: 67%;
+    }
+  }
+}
+
+
 
 @media only screen and (max-width: 768px){
 
 
-    .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
+  .scene, .container__3,.container__4,.container__5,.container__6,.container__7{
 
-       width: 80%;
-       margin: 0 auto;
+      width: 80%;
+      margin: 0 auto;
+  }
+  // .dilemme{
+
+  //     width: 90%;
+  //     height: 100vh;
+  //     margin: 0 auto;
+  //     padding: 0;
+  // }
+  .pin-container,.pin{
+      width: 0;
+  }
+
+  .section, .section2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      // margin: auto 0;
+      width: 100%;
+      // height: 80vh;
+      //background-color: #f27d0c;
+
+
+    .text{
+
+
+      margin:  50vh auto;
+      z-index: 5;
     }
-    // .dilemme{
+    span{
 
-    //     width: 90%;
-    //     height: 100vh;
-    //     margin: 0 auto;
-    //     padding: 0;
+      position: absolute;
+      text-transform: uppercase;
+      top: 35%;
+      left: 50%;
+      font-size: 50px;
+      transform: translate(-50%, -50%);
+    }
+    .title{
+
+      position: absolute;
+      text-transform: uppercase;
+      top: 26%;
+      left: 50%;
+      font-size: 50px;
+      transform: translate(-50%, -50%);
+    }
+    .scener-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%) rotate(60deg);
+      z-index: 0;
+      opacity: 40%;
+    }
+    
+
+    .sync-logo{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      opacity: 40%;
+    }
+      
+        
+
+    // .scener{
+
+    //     background: url(../../assets/images/scener-logo-wordmark.png);
+    //     background-size: 10%;
     // }
-    .pin-container,.pin{
-        width: 0;
+  }
+  .section2{
+   .title {
+      top: -2%;
+   }
+
+   p{
+
+    position: relative;
+
+    top: 10vh;
+   }
+
+
+    .circle{
+      position: absolute;
+      top: 65%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      width: 450px;
+      min-height:760px;
+    }
+      
+    .circle-content{
+      top: 70%;
     }
 
-    .section, .section2 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        // margin: auto 0;
-        width: 100%;
-        // height: 80vh;
-        //background-color: #f27d0c;
+    .icon2{
+      transform: rotate(0deg);
+      top: 65vh;
+    }
 
+    .sync{
 
-        .text{
+      top: 45vh;
 
-
-            margin:  50vh auto;
-            z-index: 5;
-        }
-        span{
-
-            position: absolute;
-            text-transform: uppercase;
-            top: 35%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .title{
-
-            position: absolute;
-            text-transform: uppercase;
-            top: 26%;
-            left: 50%;
-            font-size: 50px;
-            transform: translate(-50%, -50%);
-        }
-        .scener-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%) rotate(60deg);
-            z-index: 0;
-            opacity: 40%;
-        }
-        
-
-        .sync-logo{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            opacity: 40%;
-        }
-        
-          
-
-        // .scener{
-
-        //     background: url(../../assets/images/scener-logo-wordmark.png);
-        //     background-size: 10%;
-        // }
     }
 
 
+  }
+
+
+  .section-next2{
+    margin-bottom: 10%;
+
+    p{
+      text-align: left;
+      width: 125%;
+      left: 85%;
+      
+      transform: translate(-50%);
+    }
+  }
+
+
+
+
+
+}
+
+@media only screen and (min-width: 540px){  
+  
+  .section-next2 p {
+    text-align: left;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 
 
@@ -382,6 +584,8 @@
 
     margin-top: 10%;
   }
+
+
 }
 
 .container__6{
@@ -398,6 +602,7 @@
     }
   }
 }
+
 
     
 }

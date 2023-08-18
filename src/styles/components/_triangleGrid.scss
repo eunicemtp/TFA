@@ -27,17 +27,84 @@ svg{
 }
 
 
+.triangle2{
+
+    position: relative;
+    top: 80vh;
+    //right: 30%;
+    width: 90%;
+}
+#Pyramide{
+    width: 180%;
+
+}
+
+
 @media only screen and (max-width: 799px){
 
     svg{
 
         margin: 0 -40vw;
-        width: 120%; 
-        height: 25%;
+        top: 55vh;
+        position: absolute;
+        width: 130%;
+        height: 500px;
     }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 843px){
 
+    svg{
+
+        margin: 0px -25vw;
+        top: 40vh;
+        position: absolute;
+        width: 130%;
+        height: 500px;
+    }
+}
+@media only screen and (min-width: 844px) and (max-width: 1023px){
+
+    svg {
+        width: 120%;
+        height: 5%;
+        top: 15vh;
+        margin: 0 -20vw;
+    }
+}
+@media only screen and (min-width: 440px) and (max-width: 580px){
+
+    svg{
+
+        // margin: 0px -25vw;
+        top: 50vh;
+        position: absolute;
+        width: 130%;
+        height: 500px;
+    }
+}
+@media only screen and (min-width: 581px) and (max-width: 700px){
+
+    svg{
+
+        margin: 0px -30vw;
+        top: 48vh;
+        position: absolute;
+        width: 120%;
+        height: 500px;
+    }
+}
+@media only screen and (min-width: 700px) and (max-width: 768px){
+
+    svg{
+
+        margin: 0px -30vw;
+        top: 48vh;
+        position: absolute;
+        width: 115%;
+        height: 500px;
+    }
+}
 @media only screen and (min-width: 1024px){
 
     // .triangle g{
@@ -59,3 +126,23 @@ svg{
 }
 
 
+@media only screen and (min-width: 1023px) and (max-width: 1189px){
+    
+    svg{
+        
+        width: 90%;
+        margin-bottom: -30%;
+        left: 0;
+        /* float: left; */
+        height: 50%;
+        position: fixed;
+        margin-left: 15%;
+        
+    }
+
+    .title__section {
+
+        margin-left: 15%;
+    }
+    
+}

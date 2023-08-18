@@ -54,7 +54,7 @@
   
   
   <header>
-    <nav class="menu menu--mobile">
+    <!-- <nav class="menu menu--mobile">
       <div id="triangle">
         <ul class="menu__liste" >
           <li class="menu__el">
@@ -70,11 +70,27 @@
       </ul>
       </div>
 
+    </nav> -->
+    <nav class="menu menu--mobile">
+      <div class="menu__container">
+        <ul class="menu__liste">
+          <li class="menu__el"><a href="index.html" class="menu-link">What's Time2share&nbsp?</a></li>
+          <li class="menu__el"><a href="#WhyanExtention" class="menu-link">Why an extention&nbsp?</a></li>
+          <li class="menu__el"><a href="#whatDoesItDo" class="menu-link">What's does it&nbspdo&nbsp?</a></li>
+        </ul>
+      </div>
+      <div class="menuToggle"></div> 
+    
+     
     </nav>
   </header>
 
   <main>
-    <button class="burgerMenu" id="btn-menu">menu</button>
+    
+    <button id="btn--menu">
+      <div class="menu-hamburger"></div>
+    </button>
+    <!-- <button class="burgerMenu" id="btn-menu">menu</button> -->
     <div class="container container__1">
       <section class="title__section">
         <h1 class ="title title__h1">Time2share</h1>
@@ -131,6 +147,30 @@
     </section>
  
     <!-- <section class=""> -->
+
+      <svg  class="triangle2" style="opacity: 0;" height="280%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 5584.91 2628.03" width="105%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+          <g id="Pyramide">
+            <g class="move_1"> 
+              <path class="un"  d="M2583.85 2365.78L3365.43 2365.78L2975.52 1674.31L2583.85 2365.78Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+              <path class="deux" d="M3775.44 1655.97L2993.86 1655.97L3383.77 2347.29L3775.44 1655.97Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+              <path class="trois" d="M3399.18 2366.66L4180.77 2366.66L3790.85 1675.33L3399.18 2366.66Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+            </g>
+            <g class="move_2">
+              <path class="quatre" d="M4590.78 1656.85L3809.05 1656.85L4199.11 2348.17L4590.78 1656.85Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+              <path class="cinq" d="M4217.16 2366.66L4998.74 2366.66L4608.83 1675.33L4217.16 2366.66Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+            </g>   
+            <g class="move_1"> 
+              <path class="six" d="M2993.42 1639.68L3775 1639.68L3385.09 948.207L2993.42 1639.68Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+            </g> 
+            <g class="move_2">
+              <path class="sept" d="M4185.02 929.866L3403.43 929.866L3793.35 1621.19L4185.02 929.866Z" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.5"/>
+              <path class="huit" d="M3807.73 1637.19L4589.32 1637.19L4199.4 945.716L3807.73 1637.19Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+            </g>
+            
+            <path class="neuf" d="M3404.02 912.258L4185.6 912.258L3795.69 220.934L3404.02 912.258Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+          </g>
+        </svg>
       
       <section class="container container__4 fixe3 section-previous">
           <h2 class ="title title__h2 first-title" id="WhyanExtention">Why an extention&nbsp?</h2>
@@ -141,6 +181,7 @@
             Qu'avons-nous besoin ? Et c’est en discutant avec d'autres membres de la communauté que cette idée a germé.
           </p>
       </section>
+
       <div class="dilemme section-about" id="section-gsap">
 
         <h4 class ="title title__h4" class ="title title__h3">Les utilisateurs ont cité plusieurs problèmes lors des discussions :</h4>
@@ -148,7 +189,8 @@
         <section class="section section-first">
           <div class="circle center">
             <div class="circle-content">
-              <span>01</span>
+              <div class="pin4"></div>
+              <span class="gauche2">01</span>
               <p class="lines text">Il faudrait rassembler toute les plateformes en une seule</p>
             </div>
           </div>
@@ -184,7 +226,7 @@
         <section class="section section-conlusion">
           <div class="circle center">
             <div class="circle-content">
-              <span>Conclusions</span>
+              <span class="conclu">Conclusions</span>
               <p class="lines text">Malheureusement tous les problèmes soulevés ne sont pas réalisables, les paramètres de
                 confidentialité des différentes plateformes empêchent beaucoup de fonctionnalités.
               </p>
@@ -213,7 +255,7 @@
       <section class="section2 section-first">
         <div class="circle center">
           <div class="circle-content">
-            <!-- <h4 class ="title title__h4 titles_scroll">Scener</h4> -->
+           
             <img class="icon2 scener" src="assets/images/scener-logo-wordmark.png" alt="">
             
             <p class="lines text2">
@@ -226,7 +268,7 @@
       <section class="section2">
         <div class="circle center">
           <div class="circle-content">
-            <!-- <h4 class ="title title__h4 titles_scroll" >Kast</h4> -->
+          
             <img class="icon2 kast" src="assets/images/kast_logo.svg" alt="">
             <p class="lines text2">
               Kast permet aux utilisateurs de synchroniser et de regarder des vidéos, mais aussi des jeux, des documents, etc. La plate-forme est gratuite avec YouTube et Tabi, mais vous devez payer pour regarder le contenu d'une plateforme de streaming comme Netflix. 
@@ -236,7 +278,7 @@
         </div>
       </section>
 
-      <section class="section2">
+      <section class="section2 section--sync">
         <div class="circle center">
           <div class="circle-content">
             <h4 class ="title title__h4 titles_scroll">SyncPlay</h4>
@@ -247,7 +289,7 @@
       </section>
    
     </div>
-
+ 
     <div class=" container__7 section-next2 ">
       <h2 class ="title title__h2 section-next__title" id="whatDoesItDo">What does it do ?</h2>
       <p>
@@ -260,10 +302,12 @@
         Lorsqu’une personne mets pause, cela met la pause pour tout le monde. 
         Il y aura la possibilité de discuter par chat vocal écrit ou en appel vidéo.
       </p>
-    </div> 
+    </div>
    
   </main>
-  <footer></footer>
+  <footer>
+    <small class="credits"> <a href="index.html"> Eunice Mutope </a> © 2023  - <a href="https://dwt.heaj.be/"> <span id="espace">DWT </span>  </a> - TFA </small>
+  </footer>
 
 </body>
 </html>
